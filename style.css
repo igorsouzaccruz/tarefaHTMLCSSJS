@@ -1,6 +1,47 @@
 * {
    margin: 0 auto; 
-   width: 800px; 
    text-align: center; 
-   background-color: yellow;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+body{
+   background-color: rgb(146, 228, 135);
+}
+
+.title {
+  color: rgb(32, 167, 32);
+  text-shadow: 2px 2px  rgb(5, 97, 25);
+  text
+}
+
+h2{
+   color: rgb(1, 63, 1);
+   padding: 10px 0px
+}
+
+p{
+   padding: 10px 0px;
+}
+
+.questoes{
+   background-color: white;
+   margin:50px auto;
+   padding: 20px 0px;
+   width: 800px; 
+}
+
+.questoes a {
+   color: green;
+   font-size: larger;
+   text-decoration-line: none;
+}
+
+.questoes a:hover{
+   color: rgb(3, 34, 3);
+}
+
+footer{
+   background-color: white;
+   color: black;
+   font-style: italic;
 }
