@@ -1,19 +1,28 @@
-let nomeq1;
+let inputNomeQuestao01;
 // let nomeq1Length = nomeq1.length;
 
+function conversaoABNT(nomeCompleto) {
+  let nomeConvertido =  "";
+  let nomesNoArray = nomeCompleto.trim().split(/\s+/);
+  let primeiroNome = nomesNoArray[0];
+  let ultimoNome = nomesNoArray[nomesNoArray.length - 1];
+  let primeiraLetraDosNomesNoArray = [];
 
+  nomeConvertido = ultimoNome + ", " + primeiroNome;
 
-const getValueInput = () =>{
-    nomeq1 = document.getElementById("nomeq1").value; 
-    document.getElementById("resposta01").innerHTML = nomeq1;
-    let nomes = nomeq1.trim().split(/\s+/);
-    let ultimoNome = nomes[nomes.length -1];
-    console.log(nomes);
-    let primeiraLetraNomeNoArray = [];
-    for (let nome = 0; nome < nomes.length - 1; nome++) {
-      primeiraLetraNomeNoArray.push(nomes[nome].charAt(0)); 
-    }
-    console.log(ultimoNome);
-    console.log(primeiraLetraNomeNoArray);
+  for (let nome = 1; nome < nomesNoArray.length - 1; nome++) {
+    primeiraLetraDosNomesNoArray.push(nomesNoArray[nome].charAt(0));
   }
-  
+
+  primeiraLetraDosNomesNoArray.forEach(nome => {
+    nomeConvertido += " " + nome;
+  });
+
+  return nomeConvertido;
+}
+
+const getValueInput = () => {
+  inputNomeQuestao01 = document.getElementById("nomeq1").value;
+  let respostaQuestao01 = conversaoABNT(inputNomeQuestao01);
+  document.getElementById("resposta01").innerHTML = respostaQuestao01;
+};
