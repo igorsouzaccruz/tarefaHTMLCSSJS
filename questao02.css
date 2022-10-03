@@ -1,0 +1,65 @@
+body{
+    background-color: rgb(146, 228, 135);
+}
+.hanoi{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 450px;
+    width: 600px;
+    background: #CCF;
+    position: relative;
+}
+.tower{
+    position: relative;
+    cursor: pointer;
+}
+.tower:hover{
+    background: rgb(181, 181, 235);
+}
+.tower::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 200px;
+    bottom: 0;
+    left: 90px; /*cada coluna tem 200, o meio é 100, menos da metade deixa uns 80px*/
+    background: rgb(66, 102, 0);
+    border-radius: 10px 10px 0 0;
+}
+.disk{
+    position: absolute; /*aí os discos saem do grid*/
+    background: linear-gradient(0deg, rgb(0, 255, 149), rgb(0, 102, 17));
+    height: 35px; /*a torre tem 200px, então para ter 5pinos cada um tem que ter menos de 40px*/
+    width: 180px; /*esse vai ser o tamanho do maior*/
+    border-radius: 15px;
+    margin-left: 10px;
+    z-index: 2; /*pra ele passar na frente do pino*/
+    transition: left .2s, bottom .2s .2s;
+    pointer-events: none;
+}
+/*Acertando o tamanho dos discos*/
+.d1{width: 60px; margin-left: 70px;}
+.d2{width: 90px; margin-left: 55px;}
+.d3{width: 120px; margin-left: 40px;}
+.d4{width: 150px; margin-left: 25px;}
+/*Não precisa do d5 - é o tamanho que foi definido*/
+
+
+/*Torres*/
+.t1{left: 0;}
+.t2{left: 200px;}
+.t3{left: 400px;}
+
+/*Posições*/
+.p1{bottom: 0; /*o disco mais debaixo*/}
+.p2{bottom: 35px ;}
+.p3{bottom: 70px ;}
+.p4{bottom: 105px ;}
+.p5{bottom: 140px ;}
+.p0{bottom: 350px;} /*é tipo o "espaço" fora da torre*/
+
+footer{
+    color: black;
+    font-style: italic;
+}
