@@ -1,49 +1,51 @@
 let towers = [[5,4,3,2,1],[],[]]
 let positions = ['p1', 'p2', 'p3', 'p4', 'p5', 'p0','t1', 't2', 't3']
 /*criando buffer de movimentos*/
-let movements = []
+let diskMovements = []
 
 function render (){
-    towers.forEach((tower, towerid) => {
+    towers.forEach((tower, towerId) => {
         tower.forEach((disk,position) => {
-            let d = document.querySelector('.d'+disk)
+            let d = document.querySelector('.d' + disk)
             positions.forEach(position => {
                 d.classList.remove(position)
             })
-            d.classList.add('t'+(towerid+1))
-            d.classList.add('p'+(position+1))
+            d.classList.add('t'+(towerId + 1))
+            d.classList.add('p'+(position + 1))
         })
     })
 }
 
-function move (fromtower, totower){
-    if(!towers[fromtower].length) return
-    let disk = towers[fromtower].pop()
-    if(towers[totower].length){ /*Lógica para não permitir uma maior ficar por cima de uma menor */
-        if(towers[totower][towers[totower].length-1]<disk){
-            return towers[fromtower].push(disk)
+function move (fromTower, toTower){
+    if(!towers[fromTower].length) return
+    let disk = towers[fromTower].pop()
+    if(towers[toTower].length){ /*Lógica para não permitir uma maior ficar por cima de uma menor */
+        if(towers[toTower][towers[toTower].length-1] < disk){
+            return towers[fromTower].push(disk)
         }
     }
     let d = document.querySelector('.d'+disk)
     d.classList.add('p0')
-    towers[totower].push(disk)
+    towers[toTower].push(disk)
     setTimeout(render,400)
 }
 
 /*Criando uma fila de movimentos */
 function clicktower(n){
-    if(movements.length && movements[0].length==1){
-        movements[0].push(n)
+    if(diskMovements.length && diskMovements[0].length == 1){
+        diskMovements[0].push(n);
     } else {
-        movements.unshift([n])
+        diskMovements.unshift([n]);
     }
-    console.log(movements);
+    console.log(diskMovements);
+    console.log(diskMovements.length);
+    console.log(diskMovements[0].length == 1);
 }
 
 setInterval(()=>{
-    if (movements.length && movements[movements.length-1].length==2){
-        let m=movements.pop()
-        move(m[0], m[1])
+    if (diskMovements.length && diskMovements[diskMovements.length-1].length == 2){
+        let movement = diskMovements.pop()
+        move(movement[0], movement[1])
     }
 },600)
 
