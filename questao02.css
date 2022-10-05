@@ -59,6 +59,17 @@ body{
 .p5{bottom: 140px ;}
 .p0{bottom: 350px;} /*é tipo o "espaço" fora da torre*/
 
+a {
+    color: rgb(5, 97, 25);
+    font-size: larger;
+    text-decoration-line: none;
+ }
+ 
+ a:hover {
+    color: rgb(32, 167, 32); 
+ }
+ 
+
 footer{
     color: black;
     font-style: italic;
