@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questão 02</title>
-    <script src="app.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <title>Torre de Hanoi</title>
+    <link rel="stylesheet" href="questao02.css">
 </head>
 <body>
-    <h1>Questão 02</h1>
-    
-    <a href="index.html">Voltar para home</a>
+   <div class="instrucao">
+      <h2>Para jogar:</h2>
+      <ul>
+         <li>Clique na torre de origem, depois na torre de destino</li>
+         <li>O programa não permite colocar um disco grande em cima de um disco menor</li>
+      </ul>
+   </div>
+   <div class="hanoi">
+      <!--os discos são d1 até d5 -->
+      <!--o T vai dizer em que torre estão / o P vai dizer sua posição -->
+      <div class="disk d1"></div>
+      <div class="disk d2"></div>
+      <div class="disk d3"></div>
+      <div class="disk d5"></div>
+      <div class="disk d4"></div>
+      <div class="tower" onclick="clicktower(0)"></div>
+      <div class="tower" onclick="clicktower(1)"></div>
+      <div class="tower" onclick="clicktower(2)"></div>
+   </div>
+   
+   <script src="questao02.js" defer></script>
+   <a href="index.html">Voltar para home</a>
 </body>
-<footer> &copy por Igor Souza</footer>
+<footer> &copy by ILM - Igor, Lucas e Moacir</footer>
 </html>
