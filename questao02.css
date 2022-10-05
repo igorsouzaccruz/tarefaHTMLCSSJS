@@ -1,7 +1,17 @@
 body{
+    text-align: center;
     background-color: rgb(146, 228, 135);
 }
+
+.title {
+    color: rgb(5, 97, 25);    
+}
+p {
+    font-size: large;
+}
+
 .hanoi{
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 450px;
@@ -60,17 +70,21 @@ body{
 .p0{bottom: 350px;} /*é tipo o "espaço" fora da torre*/
 
 a {
+    display: block;
+    text-align: center;
     color: rgb(5, 97, 25);
     font-size: larger;
     text-decoration-line: none;
+    padding: 10px;
  }
  
  a:hover {
     color: rgb(32, 167, 32); 
  }
- 
 
 footer{
+    text-align: center;
+    background-color: white;
     color: black;
     font-style: italic;
 }
